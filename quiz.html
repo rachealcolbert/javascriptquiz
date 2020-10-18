@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="assets/script.js"></script>
     <title>JavaScript Quiz</title>
     <link href="https://fonts.googleapis.com/css2?family=Karla&family=Spectral:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -31,46 +32,21 @@
         </h1>
         <h1> Timer </h1>
     </header>
-    <section class="question">
-        <question>
-            <h1 id="question-one" data-number="1">Commonly used data types do NOT include:</h1>
-            <button> 1. strings </button>
-            <button> 2. booleans </button>
-            <button> 3. alerts </button>
-            <button> 4. numbers </button>
+    <section class="container">
+        <question id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons">
+                <button class="buttons">Answer 1</button>
+                <button class="buttons">Answer 2</button>
+                <button class="buttons">Answer 3</button>
+                <button class="buttons">Answer 4</button>
+            </div>
         </question>
-        <question>
-            <h1 id="question-two">The condition if an if/else statement is enclosed with _________.</h1>
-            <button data-number="1"> 1. quotes </button>
-            <button data-number="2"> 2. curly brackets </button>
-            <button data-number="3"> 3. parenthesis </button>
-            <button data-number="4"> 4. square brackets </button>
-        </question>
-        <question>
-            <h1 id="question-three" data-number="3">Arrays in JavaScript can be used to store _________.</h1>
-            <button> 1. numbers and strings </button>
-            <button> 2. other arrays </button>
-            <button> 3. booleans </button>
-            <button> 4. all of the above </button>
-        </question>
-        <question>
-            <h1 id="question-four" data-number="4">String values must be enclosed within _________ when being assigned
-                to variables.
-            </h1>
-            <button> 1. commas </button>
-            <button> 2. curly brackets </button>
-            <button> 3. quotes </button>
-            <button> 4. parenthesis </button>
-        </question>
-        <question>
-            <h1 id="question-five" data-number="5">A very useful tool used during development and debugging for printing
-                content to the debugger is:
-            </h1>
-            <button> 1. JavaScript </button>
-            <button> 2. terminal/bash </button>
-            <button> 3. for loops </button>
-            <button> 4. console.log </button>
-        </question>
+        <div class="controls">
+            <button id="start-button">Start Quiz</button>
+            <button id="next-button" class="hide">Next</button>
+        </div>
+
     </section>
     <!-- <section>
         <h1>All done!</h1>
@@ -86,7 +62,6 @@
             <button>Go back</button>
             <button>Clear high scores</button>
     </section> -->
-    <script src="/assets/script.js"></script>
 </body>
 
 </html>

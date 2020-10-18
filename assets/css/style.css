@@ -34,7 +34,7 @@ header h1 {
 }
 
 
-button {
+.buttons {
     background-color: #f2BD21;
     box-shadow: 0 3px lightgray;
     font-size: large;
@@ -51,17 +51,11 @@ button {
     margin-top: 30px;
 }
 
-button:hover {
+.buttons:hover {
     background-color: #CC5500;
     box-shadow: 0 3px lightgray;
 }
 
-.question {
-    left: 0;
-    line-height: normal;
-    margin-top: -100px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%;
+.hide {
+    display: none;
 }

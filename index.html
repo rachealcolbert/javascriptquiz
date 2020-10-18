@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="assets/script.js"></script>
     <title>JavaScript Quiz</title>
     <link href="https://fonts.googleapis.com/css2?family=Karla&family=Spectral:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -25,21 +26,42 @@
 </head>
 
 <body>
-    <!-- header with high scores link and timer -->
     <header>
         <h1>
             <a href-"#">View high scores</a>
         </h1>
         <h1> Timer </h1>
     </header>
-    <!-- starter page -->
-    <section id="start" class="intro-heading">
-        <h1> Coding Quiz Challenge </h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that the incorrect
-            answers will penalize your score/tim by ten seconds. Good luck!</p>
-        <a href="/quiz.html" class="start-button">Start</a>
+    <section class="container">
+        <question id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons">
+                <button class="buttons">Answer 1</button>
+                <button class="buttons">Answer 2</button>
+                <button class="buttons">Answer 3</button>
+                <button class="buttons">Answer 4</button>
+            </div>
+        </question>
+        <div class="controls">
+            <button id="start-button">Start Quiz</button>
+            <button id="next-button" class="hide">Next</button>
+        </div>
+
     </section>
-    <script src="/assets/script.js"></script>
+    <!-- <section>
+        <h1>All done!</h1>
+        <p>Your final score is 22.</p>
+        <form>
+            <label for="initials">Enter Initials:</label>
+            <input type="text" id="initials" name="initials">
+        </form>
+        <button>Submit</button>
+    </section>
+    <section>
+        <h1 High scores </h1>
+            <button>Go back</button>
+            <button>Clear high scores</button>
+    </section> -->
 </body>
 
 </html>

@@ -21,8 +21,18 @@ header h1 {
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 25px;
-
 }
+
+.intro-heading {
+    left: 0;
+    line-height: normal;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
 
 button {
     background-color: #f2BD21;
@@ -32,12 +42,26 @@ button {
     color: white;
     font-weight: bold;
     border-radius: 25px;
+    text-decoration: none;
     display: block;
-    margin: 0 20px;
-    padding: 0 20px;
+    width: 150px;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 30px;
 }
 
 button:hover {
     background-color: #CC5500;
     box-shadow: 0 3px lightgray;
+}
+
+.question {
+    left: 0;
+    line-height: normal;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
 }

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+header,
+header h1 {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 25px;
+
+}
+
+button {
+    background-color: #f2BD21;
+    box-shadow: 0 3px lightgray;
+    font-size: large;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    display: block;
+    margin: 0 20px;
+    padding: 0 20px;
+}
+
+button:hover {
+    background-color: #CC5500;
+    box-shadow: 0 3px lightgray;
+}

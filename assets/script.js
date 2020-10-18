@@ -6,7 +6,7 @@ var answerButtonsElement = document.getElementById('answer-buttons');
 var timeLeft = 30;
 var timerHandle
 
-let shuffledQuestions, currentQuestionIndex;
+let currentQuestionIndex = 0;
 
 startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
@@ -27,7 +27,6 @@ function startTimer() {
 function startQuiz() {
     console.log('Started');
     startButton.classList.add('hide');
-    shuffledQuestion = question.sort(() => Math.random() - .5);
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
@@ -35,7 +34,7 @@ function startQuiz() {
 
 function setNextQuestion() {
     resetState();
-    showQuestion(shuffledQuestion[currentQuestionIndex]);
+    showQuestion(currentQuestionIndex);
 }
 
 function showQuestion(question) {
@@ -66,9 +65,7 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide');
-    }
+    nextButton.classList.remove('hide');
 }
 
 function setStatusClass(element, correct) {

@@ -33,35 +33,42 @@
         <h1> Timer </h1>
     </header>
     <section class="container">
-        <question id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons">
+        <question id="question-container">
+            <h1> Coding Quiz Challenge</h1>
+            <p> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers will penalize your score by 10 seconds!</p>
+        </question>
+        <div>
+            <div id="question" class="hide">Question</div>
+            <div id="answer-buttons" class="hide">
                 <button class="buttons">Answer 1</button>
                 <button class="buttons">Answer 2</button>
                 <button class="buttons">Answer 3</button>
                 <button class="buttons">Answer 4</button>
             </div>
+        </div>
         </question>
         <div class="controls">
             <button id="start-button">Start Quiz</button>
             <button id="next-button" class="hide">Next</button>
-        </div>
+            <button id </div>
 
     </section>
-    <!-- <section>
-        <h1>All done!</h1>
-        <p>Your final score is 22.</p>
-        <form>
-            <label for="initials">Enter Initials:</label>
-            <input type="text" id="initials" name="initials">
-        </form>
-        <button>Submit</button>
+    <section class="container">
+        <div id="submit-initial-container" class="hide">
+            <h1 id="finished-text">All done!</h1>
+            <p>Your final score is 22.</p>
+            <form>
+                <label for="initials">Enter Initials:</label>
+                <input type="text" id="initials" name="initials">
+            </form>
+            <button>Submit</button>
+        </div>
     </section>
-    <section>
-        <h1 High scores </h1>
-            <button>Go back</button>
-            <button>Clear high scores</button>
-    </section> -->
+    <section class="hide">
+        <h1> High scores </h1>
+        <button>Show high scores</button>
+    </section>
 </body>
 
 </html>

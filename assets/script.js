@@ -11,7 +11,14 @@ let currentQuestionIndex = 0;
 
 startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
+    if (currentQuestionIndex < question.length - 1) {
+        currentQuestionIndex++
+    } else {
+        showInitialSubmit();
+        questionContainerElement.classList.add('hide');
+        questionElement.classList.add('hide');
+        answerButtonsElement.classList.add('hide');
+    }
     setNextQuestion();
 })
 
@@ -29,13 +36,15 @@ function startQuiz() {
     startButton.classList.add('hide');
     submitInitialContainerElement.classList.add('hide');
     currentQuestionIndex = 0;
-    questionContainerElement.classList.remove('hide');
+    questionContainerElement.classList.add('hide');
     questionElement.classList.remove('hide');
+    answerButtonsElement.classList.remove('hide');
     setNextQuestion();
 }
 
 function setNextQuestion() {
     resetState();
+    console.log(currentQuestionIndex);
     showQuestion(question[currentQuestionIndex]);
 }
 
@@ -68,14 +77,16 @@ function selectAnswer(e) {
         setStatusClass(button, button.dataset.correct);
     });
     if (currentQuestionIndex > question.length) {
-        return;
+        nextButton.classList.remove('hide');
+
+
     } else {
         nextButton.classList.remove('hide');
     }
 }
 
 function showInitialSubmit() {
-
+    document.getElementById("submit-initial-container").classList.remove('hide');
 }
 
 function setStatusClass(element, correct) {

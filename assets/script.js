@@ -3,10 +3,10 @@ var nextButton = document.getElementById("next-button");
 var questionContainerElement = document.getElementById('question-container');
 var questionElement = document.getElementById('question');
 var answerButtonsElement = document.getElementById('answer-buttons');
-var timer = document.getElementById('timer');
-var timeLeft = 30;
-var timeStart = 0;
+var submitButton = document.getElementById('submit-button');
+var timer = document.getElementById('countdown');
 var timerHandle
+var timeLeft = 60;
 var submitInitialContainerElement = document.getElementById('submit-initial-container');
 
 let currentQuestionIndex = 0;
@@ -27,14 +27,12 @@ nextButton.addEventListener('click', () => {
 
 function startTimer() {
     timerHandle = setInterval(function () {
-            timeLeft -= 1;
-            var t = timeLeft - timeStart;
-            var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((t % (1000 * 60)) / 1000);
-            document.getElementById("timer").textContent = minutes + "m " + seconds + "s ";
-            if (t <= 0) {
-                clearInterval(timerHandle);
-                document.getElementById("timer").textContent = "Time is up!"
+            if (timeLeft >= 1) {
+                timer.textContent = timeLeft;
+                timeLeft = timeLeft - 1;
+            }
+            if (timeLeft === 0) {
+                timer.textContent = 'Time is up!';
             }
         },
         1000);
@@ -211,4 +209,14 @@ var question = [{
             },
         ]
     },
-]
+];
+
+submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    var initials = document.querySelector('#initials').value;
+    if (initials === '') {
+        alert('Initials cannot be blank.');
+    } else {
+        alert('Submitted successfully');
+    }
+});

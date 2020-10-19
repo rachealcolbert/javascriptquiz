@@ -3,13 +3,16 @@ var nextButton = document.getElementById("next-button");
 var questionContainerElement = document.getElementById('question-container');
 var questionElement = document.getElementById('question');
 var answerButtonsElement = document.getElementById('answer-buttons');
-var timeLeft = 30;
+var timer = document.getElementById('timer');
+var timeLeft = 160;
+var timeStart = 160;
 var timerHandle
 var submitInitialContainerElement = document.getElementById('submit-initial-container');
 
 let currentQuestionIndex = 0;
 
 startButton.addEventListener('click', startQuiz);
+startButton.addEventListener('click', startTimer);
 nextButton.addEventListener('click', () => {
     if (currentQuestionIndex < question.length - 1) {
         currentQuestionIndex++
@@ -18,16 +21,17 @@ nextButton.addEventListener('click', () => {
         questionContainerElement.classList.add('hide');
         questionElement.classList.add('hide');
         answerButtonsElement.classList.add('hide');
-    }
+    };
     setNextQuestion();
 })
 
 function startTimer() {
     timerHandle = setInterval(function () {
-        timeLeft--
-        console.log(timeLeft);
+        timeLeft -= 1;
+        document.getElementById("timer").textContent = "Timer";
         if (timeLeft <= 0) {
             clearInterval(timerHandle);
+            document.getElementById("timer").textContent = "Time is up!"
         }
     }, 1000);
 }

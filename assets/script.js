@@ -5,6 +5,7 @@ var questionElement = document.getElementById('question');
 var answerButtonsElement = document.getElementById('answer-buttons');
 var timeLeft = 30;
 var timerHandle
+var submitInitialContainerElement = document.getElementById('submit-initial-container');
 
 let currentQuestionIndex = 0;
 
@@ -25,16 +26,17 @@ function startTimer() {
 }
 
 function startQuiz() {
-    console.log('Started');
     startButton.classList.add('hide');
+    submitInitialContainerElement.classList.add('hide');
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
+    questionElement.classList.remove('hide');
     setNextQuestion();
 }
 
 function setNextQuestion() {
     resetState();
-    showQuestion(currentQuestionIndex);
+    showQuestion(question[currentQuestionIndex]);
 }
 
 function showQuestion(question) {
@@ -64,8 +66,16 @@ function selectAnswer(e) {
     setStatusClass(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
-    })
-    nextButton.classList.remove('hide');
+    });
+    if (currentQuestionIndex > question.length) {
+        return;
+    } else {
+        nextButton.classList.remove('hide');
+    }
+}
+
+function showInitialSubmit() {
+
 }
 
 function setStatusClass(element, correct) {

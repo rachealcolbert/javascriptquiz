@@ -6,7 +6,7 @@ A timed quiz on JavaScript fundamentals for coding boot camp students to take. T
 
 ### **Website Link:**
 
-https://rachealcolbert.github.io/portfolio/
+https://rachealcolbert.github.io/javascriptquiz/
 
 ![](assets/photos/javascriptquiz.png)
 
@@ -18,7 +18,7 @@ https://rachealcolbert.github.io/portfolio/
 
 ## Website
 
-https://rachealcolbert.github.io/portfolio/
+https://rachealcolbert.github.io/javascriptquiz/
 
 ## Contribution
 

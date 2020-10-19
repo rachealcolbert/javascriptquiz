@@ -102,9 +102,10 @@ function showFinalScore() {
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
-        score++
+        score++;
         element.classList.add('correct');
     } else {
+        timeLeft--;
         element.classList.add('wrong');
     }
 }

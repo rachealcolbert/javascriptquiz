@@ -28,15 +28,16 @@
 <body>
     <header>
         <h1>
-            <a href-"#">View high scores</a>
+            View high scores
         </h1>
-        <h1> Timer </h1>
+        <h1 id="countdown"> Timer
+        </h1>
     </header>
     <section class="container">
         <question id="question-container">
             <h1> Coding Quiz Challenge</h1>
             <p> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-                answers will penalize your score by 10 seconds!</p>
+                answers will penalize your score by 5 seconds!</p>
         </question>
         <div>
             <div id="question" class="hide">Question</div>
@@ -49,7 +50,7 @@
         </div>
         </question>
         <div class="controls">
-            <button id="start-button">Start Quiz</button>
+            <button id="start-button" id="timer">Start Quiz</button>
             <button id="next-button" class="hide">Next</button>
             <button id </div>
 
@@ -57,17 +58,17 @@
     <section class="container">
         <div id="submit-initial-container" class="hide">
             <h1 id="finished-text">All done!</h1>
-            <p>Your final score is 22.</p>
+            <p id="final-score"></p>
             <form>
                 <label for="initials">Enter Initials:</label>
                 <input type="text" id="initials" name="initials">
             </form>
-            <button>Submit</button>
+            <button id="submit-button">Submit</button>
         </div>
     </section>
-    <section class="hide">
-        <h1> High scores </h1>
-        <button>Show high scores</button>
+    <section id="high-scores" class="hide">
+        <h1>High Scores</h1>
+        <button> Restart</button>
     </section>
 </body>
 

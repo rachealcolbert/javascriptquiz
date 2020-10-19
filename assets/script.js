@@ -4,7 +4,7 @@ var questionContainerElement = document.getElementById('question-container');
 var questionElement = document.getElementById('question');
 var answerButtonsElement = document.getElementById('answer-buttons');
 var submitButton = document.getElementById('submit-button');
-var highScoresButton = document.getElementById('high-scores');
+var highScores = document.getElementById('high-scores');
 var timer = document.getElementById('countdown');
 var timerHandle
 var timeLeft = 60;
@@ -226,8 +226,9 @@ submitButton.addEventListener('click', function (event) {
     if (initials === '') {
         alert('Initials cannot be blank.');
     } else {
-        alert('Submitted successfully');
-        highScoresButton.classList.remove('hide');
+        submitInitialContainerElement.classList.add('hide');
+        highScores.classList.remove('hide');
+
     }
     localStorage.setItem("initials", initials);
 });

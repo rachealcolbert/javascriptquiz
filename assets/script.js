@@ -8,6 +8,7 @@ var highScoresButton = document.getElementById('high-scores');
 var timer = document.getElementById('countdown');
 var timerHandle
 var timeLeft = 60;
+var finalScore = document.getElementById('final-score')
 var score = 0;
 var submitInitialContainerElement = document.getElementById('submit-initial-container');
 
@@ -19,13 +20,14 @@ nextButton.addEventListener('click', () => {
     if (currentQuestionIndex < question.length - 1) {
         currentQuestionIndex++
     } else {
-        showInitialSubmit();
+        showFinalScore();
         questionContainerElement.classList.add('hide');
         questionElement.classList.add('hide');
         answerButtonsElement.classList.add('hide');
     };
     setNextQuestion();
 })
+
 
 function startTimer() {
     timerHandle = setInterval(function () {
@@ -86,21 +88,21 @@ function selectAnswer(e) {
     });
     if (currentQuestionIndex > question.length) {
         nextButton.classList.remove('hide');
-
-
     } else {
         nextButton.classList.remove('hide');
     }
 }
 
-function showInitialSubmit() {
-    document.getElementById("submit-initial-container").classList.remove('hide');
 
+function showFinalScore() {
+    document.getElementById("submit-initial-container").classList.remove('hide');
+    finalScore.textContent = "Your score is " + score;
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element);
     if (correct) {
+        score++
         element.classList.add('correct');
     } else {
         element.classList.add('wrong');

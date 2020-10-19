@@ -4,9 +4,11 @@ var questionContainerElement = document.getElementById('question-container');
 var questionElement = document.getElementById('question');
 var answerButtonsElement = document.getElementById('answer-buttons');
 var submitButton = document.getElementById('submit-button');
+var highScoresButton = document.getElementById('high-scores');
 var timer = document.getElementById('countdown');
 var timerHandle
 var timeLeft = 60;
+var score = 0;
 var submitInitialContainerElement = document.getElementById('submit-initial-container');
 
 let currentQuestionIndex = 0;
@@ -93,6 +95,7 @@ function selectAnswer(e) {
 
 function showInitialSubmit() {
     document.getElementById("submit-initial-container").classList.remove('hide');
+
 }
 
 function setStatusClass(element, correct) {
@@ -211,6 +214,9 @@ var question = [{
     },
 ];
 
+
+
+
 submitButton.addEventListener('click', function (event) {
     event.preventDefault();
     var initials = document.querySelector('#initials').value;
@@ -218,5 +224,18 @@ submitButton.addEventListener('click', function (event) {
         alert('Initials cannot be blank.');
     } else {
         alert('Submitted successfully');
+        highScoresButton.classList.remove('hide');
     }
+    localStorage.setItem("initials", initials);
 });
+
+renderLastRegistered();
+
+function renderLastRegistered() {
+    localStorage.getItem("initials", initials);
+    var initials = localStorage.getItem("initials");
+
+    if (initials === null) {
+        return;
+    }
+}
